@@ -61,6 +61,28 @@ const Checkout: React.FC<CheckoutProps> = ({ cartItems, totalPrice, onBack }) =>
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [step]);
 
+    // Load saved customer + shipping details from localStorage on mount
+    React.useEffect(() => {
+        try {
+            const saved = localStorage.getItem('zellor_customer_details');
+            if (!saved) return;
+            const d = JSON.parse(saved);
+            if (d.fullName) setFullName(d.fullName);
+            if (d.email) setEmail(d.email);
+            if (d.phone) setPhone(d.phone);
+            if (d.address) setAddress(d.address);
+            if (d.barangay) setBarangay(d.barangay);
+            if (d.city) setCity(d.city);
+            if (d.state) setState(d.state);
+            if (d.zipCode) setZipCode(d.zipCode);
+            if (d.selectedCourierId) setSelectedCourierId(d.selectedCourierId);
+            if (d.shippingLocation) setShippingLocation(d.shippingLocation);
+            if (d.contactMethod) setContactMethod(d.contactMethod);
+        } catch {
+            // ignore corrupt storage
+        }
+    }, []);
+
     React.useEffect(() => {
         if (paymentMethods.length > 0 && !selectedPaymentMethod) {
             setSelectedPaymentMethod(paymentMethods[0].id);
@@ -170,6 +192,26 @@ const Checkout: React.FC<CheckoutProps> = ({ cartItems, totalPrice, onBack }) =>
 
     const handleProceedToPayment = () => {
         if (isDetailsValid) {
+            try {
+                localStorage.setItem(
+                    'zellor_customer_details',
+                    JSON.stringify({
+                        fullName,
+                        email,
+                        phone,
+                        address,
+                        barangay,
+                        city,
+                        state,
+                        zipCode,
+                        selectedCourierId,
+                        shippingLocation,
+                        contactMethod,
+                    })
+                );
+            } catch {
+                // storage unavailable (private mode, quota) — non-fatal
+            }
             setStep('payment');
         }
     };
