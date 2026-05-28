@@ -1,99 +1,107 @@
 import React from 'react';
-import { HelpCircle, MapPin, Truck, FlaskConical, Heart, Shield } from 'lucide-react';
+import { HelpCircle, MapPin, Truck, FlaskConical, Shield } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal-900 pt-16 pb-8 border-t border-charcoal-800">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+    <footer className="relative bg-gradient-to-b from-charcoal-900 via-charcoal-800 to-brand-700 pt-20 pb-8 overflow-hidden">
+      {/* Botanical decoration */}
+      <svg className="absolute -top-8 right-12 w-48 h-48 text-brand-200/20 hidden md:block" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.6" strokeLinecap="round">
+        <path d="M100 10 C 90 80, 110 140, 100 200" />
+        <path d="M100 50 C 80 60, 70 70, 60 80" />
+        <path d="M100 80 C 120 90, 130 100, 140 110" />
+        <path d="M100 120 C 80 130, 70 140, 60 150" />
+        <circle cx="60" cy="80" r="2.5" />
+        <circle cx="140" cy="110" r="2.5" />
+        <circle cx="60" cy="150" r="2.5" />
+      </svg>
+
+      <div className="container mx-auto px-4 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
 
           {/* Brand Section */}
           <div className="flex flex-col items-center md:items-start gap-4">
-            <img
-              src="/logo.jpeg?v=2"
-              alt="The Babe Studio"
-              className="h-14 w-auto object-contain bg-white/10 rounded-lg p-2"
-            />
-            <p className="text-charcoal-400 text-sm max-w-xs text-center md:text-left">
-              Quality peptides for your wellness journey. Lab-tested, high-purity formulations you can trust.
+            <div className="flex items-center gap-3">
+              <img
+                src="/public/logo.jpg"
+                alt="Zellor Zen Labs"
+                className="h-14 w-auto object-contain bg-white/5 backdrop-blur rounded-lg p-2"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="text-2xl font-heading font-medium text-white tracking-wide">ZELLOR</span>
+                <span className="text-[10px] text-brand-100 tracking-[0.3em] mt-1 font-medium">ZEN LABS</span>
+              </div>
+            </div>
+            <p className="text-charcoal-200 text-sm max-w-xs text-center md:text-left font-light leading-relaxed">
+              Research-grade peptides crafted with botanical precision. Lab-tested, high-purity formulations for the modern wellness journey.
             </p>
           </div>
 
           {/* Contact Us */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-2">Contact Us</h3>
+            <h3 className="text-white font-medium text-xs uppercase tracking-[0.3em] mb-3">Contact</h3>
 
             <a
-              href="mailto:babestudio259@gmail.com"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
+              href="mailto:hello@zellor.zen"
+              className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm"
             >
-              <svg className="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg className="w-4 h-4 text-brand-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              babestudio259@gmail.com
+              hello@zellor.zen
             </a>
 
             <a
               href="tel:+639496133242"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
+              className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm"
             >
-              <svg className="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              <svg className="w-4 h-4 text-brand-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               0949 613 3242
             </a>
 
-            <div className="text-charcoal-300 flex items-center gap-2 text-sm mt-2">
-              <MapPin className="w-4 h-4 text-brand-400" />
+            <div className="text-charcoal-200 flex items-center gap-2 text-sm mt-2">
+              <MapPin className="w-4 h-4 text-brand-200" strokeWidth={1.5} />
               General Trias, Cavite
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-2">Quick Links</h3>
-            <a
-              href="#"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
-            >
-              <FlaskConical className="w-4 h-4" />
+            <h3 className="text-white font-medium text-xs uppercase tracking-[0.3em] mb-3">Explore</h3>
+            <a href="#" className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm">
+              <FlaskConical className="w-4 h-4" strokeWidth={1.5} />
               Products
             </a>
-            <a
-              href="/track-order"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
-            >
-              <Truck className="w-4 h-4" />
+            <a href="/track-order" className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm">
+              <Truck className="w-4 h-4" strokeWidth={1.5} />
               Track Order
             </a>
-            <a
-              href="/faq"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
-            >
-              <HelpCircle className="w-4 h-4" />
+            <a href="/faq" className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm">
+              <HelpCircle className="w-4 h-4" strokeWidth={1.5} />
               FAQ
             </a>
-            <a
-              href="/coa"
-              className="text-charcoal-300 hover:text-brand-400 transition-colors flex items-center gap-2 text-sm"
-            >
-              <Shield className="w-4 h-4" />
+            <a href="/coa" className="text-charcoal-200 hover:text-brand-100 transition-colors flex items-center gap-2 text-sm">
+              <Shield className="w-4 h-4" strokeWidth={1.5} />
               Lab Reports
             </a>
           </div>
 
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-charcoal-800 mb-6" />
+        {/* Zen divider */}
+        <div className="relative flex items-center justify-center mb-6">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand-300/30 to-transparent" />
+          <span className="px-4 text-brand-200/60 text-xs tracking-[0.4em] font-serif italic">zen</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand-300/30 to-transparent" />
+        </div>
 
         {/* Footer Bottom */}
         <div className="text-center">
-          <p className="text-xs text-charcoal-500 flex items-center justify-center gap-1">
-            Made with
-            © {currentYear} The Babe Studio.
+          <p className="text-xs text-charcoal-300 tracking-wide">
+            © {currentYear} Zellor &middot; Zen Labs. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,28 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* The Babe Studio - Luxury Biotech Theme */
-  --theme-bg: #FFFFFF;
-  --theme-text: #1E1E1E;
+  /* Zellor Zen Labs - Botanical Biotech Theme */
+  --theme-bg: #FBFAF6;
+  --theme-text: #0F2A3F;
 
   /* Primary Palette */
-  --rose-gold: #CFA07A;
-  --deep-copper: #8C5A44;
-  --light-rose: #F4E3DA;
+  --navy-deep: #0F2A3F;
+  --navy-mid: #14304B;
+  --sage-teal: #4A8478;
+  --sage-deep: #305850;
+  --sage-light: #94BAAE;
+  --sage-mist: #D5E4DD;
 
   /* Backgrounds */
-  --cream: #FFFFFF;
-  --blush-light: #F4E3DA;
-  --warm-white: #FDFDFD;
+  --cream: #FBFAF6;
+  --warm-white: #FDFCF8;
+  --pale-sage: #E0ECE7;
 }
 
 @layer base {
   body {
-    @apply font-sans text-charcoal-800 bg-white antialiased leading-relaxed;
+    @apply font-sans text-charcoal-800 bg-cream antialiased leading-relaxed;
+    background-image:
+      radial-gradient(ellipse 1200px 600px at 10% -10%, rgba(74, 132, 120, 0.06), transparent 60%),
+      radial-gradient(ellipse 900px 500px at 100% 100%, rgba(15, 42, 63, 0.05), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1,
@@ -31,40 +38,82 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-semibold text-charcoal-900 tracking-tight;
+    @apply font-heading font-medium text-charcoal-900 tracking-tight;
+    letter-spacing: -0.01em;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(74, 132, 120, 0.2);
+    color: var(--navy-deep);
   }
 }
 
 @layer components {
 
-  /* The Babe Studio Button Styles */
+  /* Zellor Button Styles */
   .btn-primary {
-    @apply bg-brand-400 text-white px-8 py-4 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 shadow-soft hover:bg-brand-500 hover:shadow-luxury active:transform active:scale-[0.98];
+    @apply bg-charcoal-900 text-cream px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-all duration-300 shadow-soft hover:bg-brand-600 hover:shadow-luxury active:transform active:scale-[0.98];
+    background-image: linear-gradient(135deg, #0F2A3F 0%, #305850 100%);
+  }
+
+  .btn-primary:hover {
+    background-image: linear-gradient(135deg, #14304B 0%, #4A8478 100%);
   }
 
   .btn-secondary {
-    @apply bg-transparent text-charcoal-800 border-2 border-charcoal-200 px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-charcoal-50 hover:border-charcoal-800 active:transform active:scale-[0.98];
+    @apply bg-transparent text-charcoal-900 border border-brand-500 px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-all duration-300 hover:bg-brand-50 hover:border-brand-700 active:transform active:scale-[0.98];
   }
 
-  /* Luxury Card Styles */
+  .btn-ghost {
+    @apply bg-transparent text-brand-700 px-6 py-3 rounded-lg font-medium text-sm tracking-wide transition-all duration-300 hover:bg-brand-50;
+  }
+
+  /* Zen Card Styles */
   .card {
-    @apply bg-white rounded-2xl shadow-soft border border-brand-300 p-3 sm:p-6 transition-all duration-300 hover:shadow-luxury hover:border-brand-500;
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-soft border border-brand-100 p-3 sm:p-6 transition-all duration-300 hover:shadow-luxury hover:border-brand-300;
+  }
+
+  .card-zen {
+    @apply bg-gradient-to-br from-white via-white to-brand-50 rounded-2xl shadow-soft border border-brand-100 p-6 transition-all duration-300 hover:shadow-luxury;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-white border border-charcoal-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition-all placeholder-charcoal-400 text-charcoal-800;
+    @apply w-full px-4 py-3 bg-white/80 border border-charcoal-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all placeholder-charcoal-400 text-charcoal-900;
   }
 
   .badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide;
   }
 
   .badge-primary {
-    @apply bg-brand-50 text-brand-700;
+    @apply bg-brand-50 text-brand-700 border border-brand-100;
   }
 
   .badge-accent {
-    @apply bg-charcoal-50 text-charcoal-800;
+    @apply bg-charcoal-50 text-charcoal-800 border border-charcoal-100;
+  }
+
+  /* Brand mark gradient text — for headings/wordmarks */
+  .text-zellor-gradient {
+    background: linear-gradient(180deg, #0F2A3F 0%, #305850 70%, #4A8478 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Subtle decorative divider */
+  .zen-divider {
+    @apply relative my-12 flex items-center justify-center;
+  }
+  .zen-divider::before,
+  .zen-divider::after {
+    content: '';
+    @apply flex-1 h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent;
+  }
+  .zen-divider > * {
+    @apply px-4 text-brand-500;
   }
 }
 

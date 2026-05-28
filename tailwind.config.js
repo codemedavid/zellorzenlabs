@@ -7,49 +7,52 @@ export default {
   theme: {
     extend: {
       colors: {
-        // The Babe Studio - Luxury Biotech Theme
-        'theme-bg': '#FFFFFF',           // Pure White
-        'theme-text': '#1E1E1E',         // Luxury Dark text
+        // Zellor Zen Labs - Botanical Biotech Theme
+        'theme-bg': '#FBFAF6',
+        'theme-text': '#0F2A3F',
 
-        // Primary Palette - Rose Gold
+        // Primary Palette - Sage Teal (botanical zen)
         'brand': {
-          DEFAULT: '#CFA07A', // Rose Gold
-          50: '#FDF9F7',
-          100: '#F9F1EB',
-          200: '#E7C6B1',     // Soft Rose Gold
-          300: '#DFB49A',
-          400: '#CFA07A',     // Primary Rose Gold
-          500: '#BB855B',
-          600: '#A66B41',
-          700: '#8C5A44',     // Deep Copper
-          800: '#734A38',
-          900: '#5C3C2E',
+          DEFAULT: '#4A8478',
+          50: '#F2F7F5',
+          100: '#E0ECE7',
+          200: '#BFD7CE',
+          300: '#94BAAE',
+          400: '#6A9C8D',
+          500: '#4A8478',
+          600: '#3C6C62',
+          700: '#305850',
+          800: '#264640',
+          900: '#1B3531',
         },
 
-        // Secondary & Neutral
+        // Secondary & Neutral - Deep Navy
         'charcoal': {
-          DEFAULT: '#1E1E1E',
-          50: '#F7F7F7',      // Soft Gray
-          100: '#EEEEEE',
-          200: '#D9D9D9',
-          300: '#B0B0B0',
-          400: '#858585',
-          500: '#595959',
-          600: '#4D4D4D',
-          700: '#3D3D3D',
-          800: '#2E2E2E',
-          900: '#1E1E1E',     // Luxury Dark
+          DEFAULT: '#0F2A3F',
+          50: '#F4F6F8',
+          100: '#E5EAEF',
+          200: '#C3CDD6',
+          300: '#94A4B2',
+          400: '#5F7488',
+          500: '#3C5269',
+          600: '#243C54',
+          700: '#192F44',
+          800: '#14304B',
+          900: '#0F2A3F',
         },
 
         // Backgrounds & Accents
-        'cream': '#FFFFFF',
-        'blush-light': '#F4E3DA', // Light Rose Accent
-        'warm-white': '#FDFDFD',
+        'cream': '#FBFAF6',
+        'blush-light': '#E0ECE7',
+        'warm-white': '#FDFCF8',
+        'sage-mist': '#D5E4DD',
+        'navy-deep': '#0F2A3F',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Playfair Display', 'serif'],
-        serif: ['Playfair Display', 'serif'],
+        heading: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
       },
       boxShadow: {
         'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
@@ -74,6 +77,7 @@ export default {
         'fadeIn': 'fadeIn 0.6s ease-out',
         'slideUp': 'slideUp 0.5s ease-out',
         'float': 'float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 8s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -88,6 +92,15 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        shimmer: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
+      backgroundImage: {
+        'zellor-gradient': 'linear-gradient(180deg, #0F2A3F 0%, #1E4A52 50%, #4A8478 100%)',
+        'zellor-gradient-horizontal': 'linear-gradient(90deg, #0F2A3F 0%, #4A8478 100%)',
+        'zen-veil': 'radial-gradient(ellipse at top, rgba(74,132,120,0.08), transparent 60%)',
       },
     },
   },

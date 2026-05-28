@@ -3,129 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Being Prepared</title>
+  <title>Order Being Prepared — Zellor</title>
   <style>
     @media only screen and (max-width: 480px) {
-      .container { width: 100% !important; padding: 12px !important; }
+      .container { width: 100% !important; }
+      .px { padding-left: 24px !important; padding-right: 24px !important; }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+<body style="margin: 0; padding: 0; background-color: #FBFAF6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
 
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #FBFAF6;">
     <tr>
-      <td align="center" style="padding: 20px 12px;">
-        <table role="presentation" class="container" width="520" cellpadding="0" cellspacing="0">
+      <td align="center" style="padding: 32px 12px;">
+        <table role="presentation" class="container" width="560" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(15,42,63,0.06);">
 
-          <!-- Logo -->
           <tr>
-            <td style="padding: 0 0 20px;">
-              <p style="margin: 0; font-size: 20px; font-weight: 700; color: #A66B41;">The Babe <span style="color: #CFA07A;">Studio</span></p>
+            <td align="center" style="padding: 36px 32px 28px; background: linear-gradient(180deg, #0F2A3F 0%, #305850 60%, #4A8478 100%);">
+              <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: 600; color: #FBFAF6; letter-spacing: 0.08em;">ZELLOR</p>
+              <p style="margin: 6px 0 0; font-size: 10px; font-weight: 600; color: #D5E4DD; letter-spacing: 0.45em;">ZEN&nbsp;&nbsp;LABS</p>
             </td>
           </tr>
 
-          <!-- Greeting -->
           <tr>
-            <td style="padding: 0 0 14px;">
-              <p style="margin: 0; font-size: 15px; color: #1E1E1E; line-height: 1.7;">Hi {{ event.properties.customer_name }},</p>
-              <p style="margin: 14px 0 0; font-size: 15px; color: #1E1E1E; line-height: 1.7;">Your order <strong>{{ event.properties.order_number }}</strong> is now being prepared!</p>
+            <td class="px" style="padding: 36px 40px 8px;">
+              <p style="margin: 0 0 10px; font-family: Georgia, serif; font-size: 26px; font-weight: 500; color: #0F2A3F; line-height: 1.3;">Your order is being prepared</p>
+              <p style="margin: 0; font-size: 15px; color: #3C5269; line-height: 1.7;">Hi {{ event.properties.customer_name }}, our team is carefully packing order <strong style="color: #4A8478;">{{ event.properties.order_number }}</strong> right now.</p>
             </td>
           </tr>
 
-          <tr><td style="padding: 4px 0;"><div style="height: 1px; background-color: #F4E3DA;"></div></td></tr>
+          <tr><td class="px" style="padding: 24px 40px 0;"><div style="height: 1px; background-color: #D5E4DD;"></div></td></tr>
 
-          <!-- Status Progress -->
           <tr>
-            <td style="padding: 18px 0;">
+            <td class="px" style="padding: 24px 40px;">
+              <p style="margin: 0 0 18px; font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #4A8478;">Order Progress</p>
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <!-- Confirmed ✓ done -->
                 <tr>
-                  <td width="36" valign="top" style="padding: 0 12px 0 0;">
-                    <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #CFA07A; text-align: center; line-height: 28px; font-size: 13px; color: #ffffff; font-weight: 700;">&#10003;</div>
+                  <td width="36" valign="top" style="padding: 0 14px 0 0;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background-color: #4A8478; text-align: center; line-height: 30px; font-size: 14px; color: #FBFAF6; font-weight: 700;">&#10003;</div>
                   </td>
-                  <td style="padding: 4px 0 16px;">
-                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #1E1E1E;">Confirmed</p>
-                    <p style="margin: 2px 0 0; font-size: 13px; color: #858585;">Payment verified, order accepted</p>
+                  <td style="padding: 4px 0 18px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #0F2A3F;">Confirmed</p>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #5F7488;">Payment verified, order accepted</p>
                   </td>
                 </tr>
-                <!-- Processing ✓ ACTIVE -->
                 <tr>
-                  <td width="36" valign="top" style="padding: 0 12px 0 0;">
-                    <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #CFA07A; text-align: center; line-height: 28px; font-size: 13px; color: #ffffff; font-weight: 700;">&#10003;</div>
+                  <td width="36" valign="top" style="padding: 0 14px 0 0;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background-color: #4A8478; text-align: center; line-height: 30px; font-size: 14px; color: #FBFAF6; font-weight: 700;">&#10003;</div>
                   </td>
-                  <td style="padding: 4px 0 16px;">
-                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #A66B41;">Processing</p>
-                    <p style="margin: 2px 0 0; font-size: 13px; color: #858585;">We're preparing your order</p>
+                  <td style="padding: 4px 0 18px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #4A8478;">Processing</p>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #5F7488;">We're preparing your order</p>
                   </td>
                 </tr>
-                <!-- Shipped — pending -->
                 <tr>
-                  <td width="36" valign="top" style="padding: 0 12px 0 0;">
-                    <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #F4E3DA; text-align: center; line-height: 28px; font-size: 13px; color: #A66B41; font-weight: 700;">3</div>
+                  <td width="36" valign="top" style="padding: 0 14px 0 0;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background-color: #E0ECE7; text-align: center; line-height: 30px; font-size: 13px; color: #4A8478; font-weight: 700;">3</div>
                   </td>
-                  <td style="padding: 4px 0 16px;">
-                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #B0B0B0;">Shipped</p>
-                    <p style="margin: 2px 0 0; font-size: 13px; color: #D9D9D9;">On its way to you</p>
+                  <td style="padding: 4px 0 18px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #94A4B2;">Shipped</p>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #C3CDD6;">On its way to you</p>
                   </td>
                 </tr>
-                <!-- Delivered — pending -->
                 <tr>
-                  <td width="36" valign="top" style="padding: 0 12px 0 0;">
-                    <div style="width: 28px; height: 28px; border-radius: 50%; background-color: #F4E3DA; text-align: center; line-height: 28px; font-size: 13px; color: #A66B41; font-weight: 700;">4</div>
+                  <td width="36" valign="top" style="padding: 0 14px 0 0;">
+                    <div style="width: 30px; height: 30px; border-radius: 50%; background-color: #E0ECE7; text-align: center; line-height: 30px; font-size: 13px; color: #4A8478; font-weight: 700;">4</div>
                   </td>
                   <td style="padding: 4px 0 0;">
-                    <p style="margin: 0; font-size: 14px; font-weight: 700; color: #B0B0B0;">Delivered</p>
-                    <p style="margin: 2px 0 0; font-size: 13px; color: #D9D9D9;">Package delivered</p>
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #94A4B2;">Delivered</p>
+                    <p style="margin: 3px 0 0; font-size: 13px; color: #C3CDD6;">Package delivered</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <tr><td style="padding: 4px 0;"><div style="height: 1px; background-color: #F4E3DA;"></div></td></tr>
+          <tr><td class="px" style="padding: 0 40px;"><div style="height: 1px; background-color: #D5E4DD;"></div></td></tr>
 
-          <!-- Message -->
           <tr>
-            <td style="padding: 14px 0;">
-              <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #A66B41;">We're on it!</p>
-              <p style="margin: 0; font-size: 14px; color: #595959; line-height: 1.8;">
-                Your order is now being packed and prepared for shipment. Sit tight — it'll be handed over to the courier soon and you'll receive tracking details once it ships.
+            <td class="px" style="padding: 24px 40px 8px;">
+              <p style="margin: 0 0 10px; font-family: Georgia, serif; font-size: 18px; font-weight: 600; color: #4A8478;">We're on it</p>
+              <p style="margin: 0; font-size: 14px; color: #3C5269; line-height: 1.8;">
+                Your order is being packed with care and will be handed to the courier soon. Tracking details will follow as soon as it ships.
               </p>
             </td>
           </tr>
 
-          <!-- CTA -->
           <tr>
-            <td align="center" style="padding: 14px 0;">
-              <a href="https://thebabestudio.com/track-order" style="display: inline-block; padding: 12px 28px; background-color: #CFA07A; color: #ffffff; font-size: 15px; font-weight: 700; text-decoration: none; border-radius: 6px;">Track Your Order</a>
+            <td align="center" class="px" style="padding: 28px 40px 8px;">
+              <a href="https://zellor.zen/track-order" style="display: inline-block; padding: 14px 36px; background-color: #4A8478; color: #FBFAF6; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px; letter-spacing: 0.08em; text-transform: uppercase;">Track Your Order</a>
             </td>
           </tr>
 
-          <!-- Help -->
           <tr>
-            <td style="padding: 14px 0;">
-              <p style="margin: 0; font-size: 14px; color: #595959; line-height: 1.7;">
-                Need help? Just reply to this email or reach out to us — we're here for you.
+            <td class="px" style="padding: 24px 40px 12px;">
+              <p style="margin: 0; font-size: 14px; color: #5F7488; line-height: 1.7; text-align: center;">
+                Need help? Reply to this email — we're here for you.
               </p>
             </td>
           </tr>
 
-          <!-- Sign-off -->
           <tr>
-            <td style="padding: 14px 0 0;">
-              <p style="margin: 0; font-size: 15px; color: #1E1E1E; line-height: 1.7;">
+            <td class="px" style="padding: 8px 40px 32px;">
+              <p style="margin: 0; font-size: 15px; color: #0F2A3F; line-height: 1.7; text-align: center;">
                 Thank you for your patience,<br>
-                The Babe Studio Team
+                <span style="font-family: Georgia, serif; font-style: italic; color: #4A8478;">The Zellor Team</span>
               </p>
             </td>
           </tr>
 
-          <tr><td style="padding: 12px 0;"><div style="height: 1px; background-color: #F4E3DA;"></div></td></tr>
-
-          <!-- Footer -->
           <tr>
-            <td style="padding: 0 0 8px;">
-              <p style="margin: 0; font-size: 12px; color: #B0B0B0;">The Babe Studio — thebabestudio.com</p>
+            <td align="center" style="padding: 28px 32px; background-color: #0F2A3F;">
+              <p style="margin: 0 0 6px; font-family: Georgia, serif; font-size: 16px; font-weight: 600; color: #FBFAF6; letter-spacing: 0.08em;">ZELLOR</p>
+              <p style="margin: 0 0 12px; font-size: 9px; font-weight: 600; color: #94BAAE; letter-spacing: 0.4em;">ZEN&nbsp;&nbsp;LABS</p>
+              <p style="margin: 0; font-size: 12px; color: #94A4B2; line-height: 1.6;">zellor.zen · hello@zellor.zen</p>
             </td>
           </tr>
 
