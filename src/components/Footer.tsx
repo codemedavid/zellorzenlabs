@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-3">
               <img
-                src="/public/logo.jpg"
+                src="/logo.jpg"
                 alt="Zellor Zen Labs"
                 className="h-14 w-auto object-contain bg-white/5 backdrop-blur rounded-lg p-2"
               />

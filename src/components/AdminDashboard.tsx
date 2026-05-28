@@ -448,7 +448,7 @@ const AdminDashboard: React.FC = () => {
           <div className="text-center mb-6">
             <div className="mx-auto mb-4">
               <img
-                src="/public/logo.jpg"
+                src="/logo.jpg"
                 alt="Zellor Zen Labs"
                 className="h-14 w-auto mx-auto object-contain"
               />
@@ -1327,7 +1327,7 @@ const AdminDashboard: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <div className="h-10 flex items-center">
                   <img
-                    src="/public/logo.jpg"
+                    src="/logo.jpg"
                     alt="Zellor Zen Labs"
                     className="h-10 w-auto object-contain"
                   />

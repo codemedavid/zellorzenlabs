@@ -210,7 +210,7 @@ All products include:
 
 ## 💡 Tips
 
-1. **Logo**: Replace `/public/logo.jpg` with your Peptivate.ph logo
+1. **Logo**: Replace `/logo.jpg` with your Peptivate.ph logo
 2. **Colors**: All colors can be adjusted in `tailwind.config.js`
 3. **Products**: Add more products via Admin Dashboard or SQL migrations
 4. **Messenger**: Update Facebook Page ID in Header.tsx (line 14) if needed
